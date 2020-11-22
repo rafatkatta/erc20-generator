@@ -5,7 +5,7 @@
 
 |  File Name  |  SHA-1 Hash  |
 |-------------|--------------|
-| dist/PowerfulERC20.dist.sol | 13d199389cfad7d21fcdf1a413c054f584059532 |
+| dist/PowerfulERC20.dist.sol | dd449cc87fa013ebef9199539eec1bb31d8bb98b |
 
 
 ### Contracts Description Table
@@ -130,6 +130,39 @@
 | └ | finishMinting | Public ❗️ | 🛑  | canMint |
 | └ | _finishMinting | Internal 🔒 | 🛑  | |
 ||||||
+| **EnumerableSet** | Library |  |||
+| └ | _add | Private 🔐 | 🛑  | |
+| └ | _remove | Private 🔐 | 🛑  | |
+| └ | _contains | Private 🔐 |   | |
+| └ | _length | Private 🔐 |   | |
+| └ | _at | Private 🔐 |   | |
+| └ | add | Internal 🔒 | 🛑  | |
+| └ | remove | Internal 🔒 | 🛑  | |
+| └ | contains | Internal 🔒 |   | |
+| └ | length | Internal 🔒 |   | |
+| └ | at | Internal 🔒 |   | |
+| └ | add | Internal 🔒 | 🛑  | |
+| └ | remove | Internal 🔒 | 🛑  | |
+| └ | contains | Internal 🔒 |   | |
+| └ | length | Internal 🔒 |   | |
+| └ | at | Internal 🔒 |   | |
+||||||
+| **AccessControl** | Implementation | Context |||
+| └ | hasRole | Public ❗️ |   |NO❗️ |
+| └ | getRoleMemberCount | Public ❗️ |   |NO❗️ |
+| └ | getRoleMember | Public ❗️ |   |NO❗️ |
+| └ | getRoleAdmin | Public ❗️ |   |NO❗️ |
+| └ | grantRole | Public ❗️ | 🛑  |NO❗️ |
+| └ | revokeRole | Public ❗️ | 🛑  |NO❗️ |
+| └ | renounceRole | Public ❗️ | 🛑  |NO❗️ |
+| └ | _setupRole | Internal 🔒 | 🛑  | |
+| └ | _setRoleAdmin | Internal 🔒 | 🛑  | |
+| └ | _grantRole | Private 🔐 | 🛑  | |
+| └ | _revokeRole | Private 🔐 | 🛑  | |
+||||||
+| **Roles** | Implementation | AccessControl |||
+| └ | <Constructor> | Public ❗️ | 🛑  |NO❗️ |
+||||||
 | **ServiceReceiver** | Implementation | TokenRecover |||
 | └ | pay | Public ❗️ |  💵 |NO❗️ |
 | └ | getPrice | Public ❗️ |   |NO❗️ |
@@ -140,9 +173,9 @@
 | **ServicePayer** | Implementation |  |||
 | └ | <Constructor> | Public ❗️ |  💵 |NO❗️ |
 ||||||
-| **PowerfulERC20** | Implementation | ERC20Capped, ERC20Mintable, ERC20Burnable, ERC1363, TokenRecover, ServicePayer |||
+| **PowerfulERC20** | Implementation | ERC20Capped, ERC20Mintable, ERC20Burnable, ERC1363, TokenRecover, Roles, ServicePayer |||
 | └ | <Constructor> | Public ❗️ |  💵 | ERC1363 ERC20Capped ServicePayer |
-| └ | _mint | Internal 🔒 | 🛑  | onlyOwner |
+| └ | _mint | Internal 🔒 | 🛑  | onlyMinter |
 | └ | _finishMinting | Internal 🔒 | 🛑  | onlyOwner |
 | └ | _beforeTokenTransfer | Internal 🔒 | 🛑  | |
 
